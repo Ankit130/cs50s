@@ -36,7 +36,7 @@ void init(void);
 void draw(void);
 bool move(int tile);
 bool won(void);
-
+void swap(int* x,int* y);
 int main(int argc, string argv[])
 {
     // ensure proper usage
@@ -168,9 +168,7 @@ void init(void)
     } 
     if(d%2==0)
     {
-        int x=board[d-1][d-2];
-        board[d-1][d-2]=board[d-1][d-3];
-        board[d-1][d-3]=x;
+        swap(&board[d-1][d-2],&board[d-1][d-3]);
     }
      
 }
@@ -268,4 +266,11 @@ bool won(void)
     return true;
     else
     return false;
+}
+void swap(int* x,int* y)
+{
+    int temp= *x;
+    *x =*y;
+    *y = temp;
+    
 }
