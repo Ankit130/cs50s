@@ -21,17 +21,17 @@
 
 int main(int argc, string argv[])
 {
-    // TODO: comment me
+    // TODO: checking for correct usage
     if (argc != 2 && argc != 3)
     {
         printf("Usage: ./generate n [s]\n");
         return 1;
     }
 
-    // TODO: comment me
+    // TODO: converting string argument to integer 
     int n = atoi(argv[1]);
 
-    // TODO: comment me
+    // TODO: checking for seed value
     if (argc == 3)
     {
         srand48((long) atoi(argv[2]));
@@ -41,7 +41,7 @@ int main(int argc, string argv[])
         srand48((long) time(NULL));
     }
 
-    // TODO: comment me
+    // TODO: iterating n times to print n random number
     for (int i = 0; i < n; i++)
     {
         printf("%i\n", (int) (drand48() * LIMIT));
