@@ -180,7 +180,13 @@ void init(void)
  */
 void draw(void)
 {
-    // TODO
+    for(int i=0;i<d;i++)
+    {
+        for(int j =0;j<d;j++)
+        {
+             printf("%2d ",board[i][j]);
+        }printf("\n");
+    }
 }
 
 /**
